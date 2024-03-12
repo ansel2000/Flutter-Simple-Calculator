@@ -38,3 +38,15 @@ jobs:
       exportOptionsPlist: ./flutter_calculator/ios/exportOptions.plist
       verboseMode: true
     displayName: Build (Flutter)
+  - task: Xcode@5
+    condition: true
+    inputs:
+      actions: 'archive' 
+      sdk: 'iphoneos'
+      scheme: 'Runner'
+      configuration: 'Release'
+      archivePath: '**/build/ios/Runner.xcarchive'
+      exportPath: '**/build/ios'
+      packageApp: true
+      xcWorkspacePath: '**/Runner.xcworkspace' 
+      signingOption: 'nosign'
