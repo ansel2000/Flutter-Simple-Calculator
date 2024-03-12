@@ -31,10 +31,10 @@ jobs:
   - task: FlutterBuild@0
     inputs:
       target: ios
-      projectDirectory: ${Build.SourcesDirectory}
+      projectDirectory: ./flutter_calculator
       iosCodesign: false
       # debugMode: ${{ parameters.debugMode }}
       profileMode: 'true'
-      exportOptionsPlist: ${Build.SourcesDirectory}/ios/exportOptions.plist
+      exportOptionsPlist: ./flutter_calculator/ios/exportOptions.plist
       verboseMode: true
     displayName: Build (Flutter)
