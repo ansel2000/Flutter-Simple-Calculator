@@ -38,6 +38,11 @@ jobs:
       exportOptionsPlist: ./flutter_calculator/ios/exportOptions.plist
       verboseMode: true
     displayName: Build (Flutter)
+  - task: CopyFiles@2
+    inputs:
+      #SourceFolder: # string. Source Folder. 
+      Contents: '**' # string. Required. Contents. Default: **.
+      TargetFolder: '$(Build.artifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)' # string. Required. Path to publish. Default: $(Build.ArtifactStagingDirectory).
