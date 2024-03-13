@@ -41,25 +41,25 @@ jobs:
   - task: CopyFiles@2
     inputs:
       #SourceFolder: # string. Source Folder. 
-      Contents: '**' # string. Required. Contents. Default: **.
+      Contents: '**/Runner.app' # string. Required. Contents. Default: **.
       TargetFolder: '$(Build.artifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)' # string. Required. Path to publish. Default: $(Build.ArtifactStagingDirectory).
       ArtifactName: 'drop' # string. Required. Artifact name. Default: drop.
       publishLocation: 'Container' # 'Container' | 'FilePath'. Alias: ArtifactType. Required. Artifact publish location. Default: Container.
-  - task: Xcode@5
-    condition: true
-    inputs:
-      actions: 'archive' 
-      sdk: 'iphoneos'
-      scheme: 'Runner'
-      configuration: 'Release'
-      archivePath: '**/build/ios/Runner.xcarchive'
-      exportPath: '**/build/ios'
-      packageApp: true
-      xcWorkspacePath: '**/Runner.xcworkspace' 
-      signingOption: 'nosign'
+  # - task: Xcode@5
+  #   condition: true
+  #   inputs:
+  #     actions: 'archive' 
+  #     sdk: 'iphoneos'
+  #     scheme: 'Runner'
+  #     configuration: 'Release'
+  #     archivePath: '**/build/ios/Runner.xcarchive'
+  #     exportPath: '**/build/ios'
+  #     packageApp: true
+  #     xcWorkspacePath: '**/Runner.xcworkspace' 
+  #     signingOption: 'nosign'
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)' # string. Required. Path to publish. Default: $(Build.ArtifactStagingDirectory).
