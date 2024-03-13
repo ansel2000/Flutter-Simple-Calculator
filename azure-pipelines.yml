@@ -40,7 +40,7 @@ jobs:
   - task: CopyFiles@2
     inputs:
       #SourceFolder: # string. Source Folder. 
-      Contents: '**/iphoneos/' # string. Required. Contents. Default: **.
+      Contents: '**' # string. Required. Contents. Default: **.
       TargetFolder: '$(Build.artifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
     inputs:
