@@ -38,6 +38,11 @@ jobs:
       exportOptionsPlist: ./flutter_calculator/ios/exportOptions.plist
       verboseMode: true
     displayName: Build (Flutter)
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)' # string. Required. Path to publish. Default: $(Build.ArtifactStagingDirectory).
+      ArtifactName: 'drop' # string. Required. Artifact name. Default: drop.
+      publishLocation: 'Container' # 'Container' | 'FilePath'. Alias: ArtifactType. Required. Artifact publish location. Default: Container.
   - task: Xcode@5
     condition: true
     inputs:
