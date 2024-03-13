@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_calculator/bindings/my_bindings.dart';
 import 'package:flutter_calculator/screen/main_screen.dart';
 import 'package:get/get.dart';
+import 'package:flutter_driver/driver_extension.dart';
+
 
 //
 // Created by CodeWithFlexZ
@@ -18,6 +20,7 @@ import 'package:get/get.dart';
 //
 
 void main() {
+  enableFlutterDriverExtension();
   runApp(const MyApp());
 }
 
