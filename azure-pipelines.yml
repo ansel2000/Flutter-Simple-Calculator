@@ -40,7 +40,7 @@ jobs:
   - task: CopyFiles@2
     inputs:
       #SourceFolder: # string. Source Folder. 
-      Contents: 'Users/runner/work/1/s/flutter_calculator/build/ios/iphoneos/Runner.app' # string. Required. Contents. Default: **.
+      Contents: '**/iphoneos/' # string. Required. Contents. Default: **.
       TargetFolder: '$(Build.artifactStagingDirectory)'
   - task: PublishBuildArtifacts@1
     inputs:
